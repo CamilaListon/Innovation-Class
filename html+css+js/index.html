@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./public/A-fav-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Avanti</title>
+  </head>
+
+  <body>
+    <div class="mensagem-desconto" role="region" aria-label="Desconto">
+      Ganhe <span class="cupom-desconto">R$10,00</span> de desconto no seu
+      primeiro pedido. Utilize o cupom <strong>DESCONTO10</strong>
+    </div>
+
+    <header class="header-desktop" role="banner">
+      <div class="topo-pesquisa">
+        <div class="linha-logo-input">
+          <img src="./public/logo-avanti.svg" alt="Logotipo Avanti" />
+          <div class="caixa-pesquisa">
+            <label for="busca" class="sr-only"> Buscar produtos </label>
+            <input
+              id="busca"
+              type="text"
+              placeholder="Digite aqui o que você procura"
+              class="input-pesquisa"
+            />
+            <img
+              src="./public/lupa.svg"
+              alt="Pesquisar"
+              class="icone"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+
+        <div class="perfil-compras">
+          <div class="perfil">
+            <img
+              src="./public/pessoa.svg"
+              alt="Ícone usuário"
+              class="icone-perfil"
+            />
+            <div>
+              <p>Olá,</p>
+              <span>Nome cliente!</span>
+            </div>
+          </div>
+
+          <div class="carrinho-quantidade">
+            <button type="button" class="carrinho" aria-label="Abrir carrinho">
+              <img src="./public/carrinho.svg" alt="Carrinho" />
+            </button>
+            <span class="quantidade-carrinho" aria-live="polite">2</span>
+          </div>
+        </div>
+      </div>
+      <div id="resultado-busca-desktop">
+        
+      </div>
+
+      <nav
+        class="menu-categorias"
+        id="menuCategorias"
+        role="navigation"
+        aria-label="Categorias de produtos"
+      >
+        <div
+          class="departamentos-top"
+          role="tablist"
+          aria-label="Departamentos"
+        >
+          <div class="dep-top" data-dep="todas" role="tab" aria-selected="true">
+            <img
+              src="./public/list.svg"
+              alt=""
+              class="icon-list"
+              aria-hidden="true"
+            />
+            Todas as categorias
+          </div>
+
+          <div class="dep-top" data-dep="moda" role="tab">Moda</div>
+          <div class="dep-top" data-dep="casa" role="tab">Casa</div>
+          <div class="dep-top" data-dep="esporte" role="tab">Esporte</div>
+          <div class="dep-top" data-dep="informatica" role="tab">
+            Informática
+          </div>
+          <div class="dep-top" data-dep="beleza" role="tab">Beleza</div>
+          <div class="dep-top" data-dep="infantil" role="tab">Infantil</div>
+          <div class="dep-top" data-dep="outros" role="tab">Outros</div>
+        </div>
+
+        <div
+          class="dropdown"
+          id="megaDropdown"
+          aria-hidden="true"
+          role="region"
+          aria-label="Mega menu"
+        >
+          <div class="dropdown-inner">
+            <aside class="col-esquerda">
+              <h4 class="col-title">Departamento</h4>
+              <nav
+                class="lista-departamentos"
+                id="listaDepartamentos"
+                aria-label="Lista de departamentos"
+              ></nav>
+            </aside>
+
+            <section class="col-centro" id="colCentro" aria-live="polite">
+              <div class="cat-col" id="catCol1"></div>
+              <div class="cat-col" id="catCol2"></div>
+              <div class="cat-col" id="catCol3"></div>
+            </section>
+
+            <aside class="col-direita" aria-hidden="false">
+              <div class="promo-card" role="group" aria-label="Promoção">
+                <img
+                  src="./public/caneca-avanti-mesa.svg"
+                  alt="Caneca promoção"
+                />
+                <div class="promo-overlay">
+                  <p class="promo-title">
+                    Confira os produtos <span>que acabaram de chegar</span>
+                  </p>
+                  <a
+                    class="btn-ver-todos"
+                    href="#"
+                    aria-label="Ver todos os produtos em promoção"
+                    >VER TODOS</a
+                  >
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <header class="header-mobile" role="banner">
+      <div class="linha-logo-input">
+        <button
+          type="button"
+          class="botao-menu-mobile"
+          id="botao-abrir-menu"
+          aria-controls="menu-mobile"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          <img
+            src="./public/list.svg"
+            alt="Abrir menu"
+            id="icone-menu-mobile"
+          />
+        </button>
+
+        <img src="./public/logo-avanti.svg" alt="Logotipo Avanti" />
+        <div class="carrinho-quantidade">
+          <button type="button" class="carrinho" aria-label="Abrir carrinho">
+            <img src="./public/carrinho.svg" alt="Carrinho" />
+          </button>
+          <span class="quantidade-carrinho" aria-live="polite">2</span>
+        </div>
+      </div>
+
+      <div class="caixa-pesquisa">
+        <label for="busca-mobile" class="sr-only">
+          Buscar produtos (mobile)
+        </label>
+        <input
+          id="busca-mobile"
+          type="text"
+          placeholder="Digite aqui o que você procura"
+          class="input-pesquisa"
+        />
+        <img
+          src="./public/lupa.svg"
+          alt="Pesquisar"
+          class="icone"
+          id="teste"
+          aria-hidden="true"
+        />
+      </div>
+      <div id="resultado-busca-mobile">
+        
+      </div>
+    </header>
+
+    <nav
+      class="menu-mobile"
+      id="menu-mobile"
+      aria-hidden="true"
+      role="navigation"
+      aria-label="Menu principal"
+    >
+      <div class="topo-dropdown">
+        <div class="perfil">
+          <img src="./public/pessoa.svg" alt="Perfil" class="icone-perfil" />
+          <div>
+            <p>Olá,</p>
+            <span>Nome cliente!</span>
+          </div>
+        </div>
+        <button
+          class="fechar-menu"
+          id="botao-fechar-menu"
+          aria-controls="menu-mobile"
+          aria-expanded="true"
+          aria-label="Fechar menu"
+        >
+          ✕
+        </button>
+      </div>
+
+      <ul>
+        <li>
+          <a href="#">
+            <div class="todas-categorias">
+              <img src="./public/list.svg" alt="" aria-hidden="true" /> Todas as
+              categorias
+            </div>
+          </a>
+        </li>
+        <li><a href="#">Moda</a></li>
+        <li><a href="#">Casa</a></li>
+        <li><a href="#">Esporte</a></li>
+        <li><a href="#">Informática</a></li>
+        <li><a href="#">Beleza</a></li>
+        <li><a href="#">Infantil</a></li>
+        <li><a href="#">Outros</a></li>
+      </ul>
+    </nav>
+
+    <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+    <main>
+      <section class="sale" aria-label="Promoção principal">
+        <div class="cadeira">
+          <img
+            src="./public/banner-hero.svg"
+            alt="Roupas dobradas"
+            id="cadeira-roupas"
+          />
+        </div>
+
+        <div class="direita-super">
+          <div class="supersale">
+            <span id="super">SUPER</span>
+            <h1 id="sale">SALE</h1>
+          </div>
+
+          <h4 id="itens-selecionados">ITENS SELECIONADOS COM ATÉ</h4>
+          <span id="off">50% OFF</span>
+        </div>
+      </section>
+
+      <section class="carrossel" aria-label="Carrossel de lançamentos">
+        <div class="lancamentos">
+          <h3>Lançamentos</h3>
+
+          <a class="ver-mais" href="#" aria-label="Ver mais lançamentos"
+            >Ver mais</a
+          >
+        </div>
+
+        <div>
+          <div class="carousel-wrapper">
+            <button
+              class="control-btn left-arrow"
+              aria-label="Deslizar para esquerda"
+            >
+              <img src="./public/seta.svg" alt="" />
+            </button>
+            <div
+              class="cards-track"
+              role="list"
+              aria-label="Produtos em destaque"
+            >
+              <div class="card" role="listitem">
+                <div class="badge">NOVO</div>
+                <img src="./public/modelo-camiseta.svg" alt="Camiseta modelo" />
+
+                <div>
+                  <h3 class="card-title">Lorem Ipsum Dolor</h3>
+                  <div class="prices-card">
+                    <div>
+                      <p class="price-original">R$ 100,00</p>
+                      <p class="price-current">R$ 79,90</p>
+                    </div>
+                    <span class="discount-tag">10% OFF</span>
+                  </div>
+                  <p class="installments">
+                    Ou em até <span class="parcelamento">10x de R$ 7,90</span>
+                  </p>
+                  <button class="btn-comprar" aria-label="Comprar camiseta">
+                    Comprar
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="control-btn right-arrow"
+              aria-label="Deslizar para direita"
+            >
+              <img src="./public/seta.svg" alt="" />
+            </button>
+          </div>
+
+          <div
+            class="indicators"
+            role="tablist"
+            aria-label="Indicadores do carrossel"
+          >
+            <button
+              class="dot active"
+              aria-label="Slide 1"
+              aria-selected="true"
+            ></button>
+            <button
+              class="dot"
+              aria-label="Slide 2"
+              aria-selected="false"
+            ></button>
+            <button
+              class="dot"
+              aria-label="Slide 3"
+              aria-selected="false"
+            ></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="caneca" aria-label="Destaque de produto">
+        <img
+          src="./public/caneca-avanti.svg"
+          alt="Caneca Avanti"
+          class="caneca-img"
+        />
+        <div class="texto">
+          <h3>LOREM IPSUM</h3>
+          <p>
+            Duis consectetur metus nec lacus auctor dignissim. Mauris vitae
+            finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras
+            efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed
+            lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas
+            fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod
+            orci, auctor fringilla magna consequat interdum. Fusce sagittis elit
+            a libero commodo egestas efficitur id augue.
+          </p>
+          <p>
+            Duis consectetur metus nec lacus auctor dignissim. Mauris vitae
+            finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras
+            efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed
+            lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas
+            fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod
+            orci, auctor fringilla magna consequat interdum. Fusce sagittis elit
+            a libero commodo egestas efficitur id augue.
+          </p>
+        </div>
+      </section>
+
+      <section class="localidades" aria-label="Localidades">
+        <div class="localidades2">
+          <h2>LOREM IPSUM</h2>
+
+          <div class="informacao">
+            <div class="ping" aria-hidden="true">
+              <img src="./public/map-pin.svg" alt="Ícone localização" />
+            </div>
+            <p>
+              Aenean massa. Cum sociis natoque penatibus et magnis dis
+              parturient montes, nascetur ridiculus mus. Donec quam felis,
+              ultricies nec, pellentesque eu, pretium quis, sem.
+            </p>
+          </div>
+
+          <div class="informacao">
+            <div class="ping" aria-hidden="true">
+              <img src="./public/map-pin.svg" alt="Ícone localização" />
+            </div>
+            <p>
+              Aenean massa. Cum sociis natoque penatibus et magnis dis
+              parturient montes, nascetur ridiculus mus. Donec quam felis,
+              ultricies nec, pellentesque eu, pretium quis, sem.
+            </p>
+          </div>
+
+          <div class="informacao">
+            <div class="ping" aria-hidden="true">
+              <img src="./public/map-pin.svg" alt="Ícone localização" />
+            </div>
+            <p>
+              Aenean massa. Cum sociis natoque penatibus et magnis dis
+              parturient montes, nascetur ridiculus mus. Donec quam felis,
+              ultricies nec, pellentesque eu, pretium quis, sem.
+            </p>
+          </div>
+        </div>
+
+        <div class="canequinha">
+          <img
+            src="./public/segundo banner.svg"
+            alt="Banner secundário"
+            class="canequinha"
+          />
+        </div>
+      </section>
+
+      <section class="caneca" aria-label="Outro destaque">
+        <img
+          src="./public/caneca-avanti.svg"
+          alt="Caneca Avanti"
+          class="caneca-img"
+        />
+        <div class="texto">
+          <h3>LOREM IPSUM</h3>
+          <p>
+            Duis consectetur metus nec lacus auctor dignissim. Mauris vitae
+            finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras
+            efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed
+            lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas
+            fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod
+            orci, auctor fringilla magna consequat interdum. Fusce sagittis elit
+            a libero commodo egestas efficitur id augue.
+          </p>
+          <p>
+            Duis consectetur metus nec lacus auctor dignissim. Mauris vitae
+            finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras
+            efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed
+            lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas
+            fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod
+            orci, auctor fringilla magna consequat interdum. Fusce sagittis elit
+            a libero commodo egestas efficitur id augue.
+          </p>
+        </div>
+      </section>
+
+      <section class="carrossel carrossel-2" aria-label="Carrossel secundário">
+        <div class="lancamentos">
+          <h3>Lançamentos</h3>
+          <a href="#" class="ver-mais" aria-label="Ver mais lançamentos"
+            >Ver mais</a
+          >
+        </div>
+
+        <div class="cards">
+          <div class="carousel-wrapper">
+            <button
+              class="control-btn left-arrow"
+              aria-label="Deslizar para esquerda"
+            >
+              <img src="./public/seta.svg" alt="" />
+            </button>
+
+            <div
+              class="cards-track"
+              role="list"
+              aria-label="Produtos em destaque secundário"
+            ></div>
+
+            <button
+              class="control-btn right-arrow"
+              aria-label="Deslizar para direita"
+            >
+              <img src="./public/seta.svg" alt="" />
+            </button>
+          </div>
+
+          <div class="indicators">
+            <button
+              class="dot active"
+              aria-label="Slide 1"
+              aria-selected="true"
+            ></button>
+            <button
+              class="dot"
+              aria-label="Slide 2"
+              aria-selected="false"
+            ></button>
+            <button
+              class="dot"
+              aria-label="Slide 3"
+              aria-selected="false"
+            ></button>
+          </div>
+        </div>
+      </section>
+
+      <div class="banner-final" role="region" aria-label="Banner Avanti">
+        <img
+          src="./public/avanti-interior.svg"
+          alt="Banner Avanti"
+          id="banner-avanti"
+        />
+        <img
+          src="./public/avanti-interior-mobile.svg"
+          alt="Banner Avanti mobile"
+          id="banner-avanti-mobile"
+          aria-hidden="true"
+        />
+        <div class="frase">
+          <p class="frase-paragrafo">
+            Entre em contato conosco e verifique a disponibilidade para sua
+            região!
+          </p>
+        </div>
+      </div>
+
+      <section class="newsletterTotal" aria-label="Cadastro newsletter">
+        <div class="newsletter">
+          <h3>Cadastre-se na nossa <span id="newsletter">newsletter</span></h3>
+        </div>
+        <div class="cadastroNewsletter">
+          <label for="seu-nome" class="sr-only">Nome</label>
+          <input type="text" placeholder="Digite seu nome" id="seu-nome" />
+
+          <label for="seu-email" class="sr-only">E-mail</label>
+          <input type="email" placeholder="Digite seu email" id="seu-email" />
+
+          <div class="check-politicas">
+            <input
+              type="checkbox"
+              id="politicas"
+              name="politicas"
+              value="politicas"
+            />
+            <label for="politicas" class="politicas">
+              Estou de acordo com a
+              <a href="#" id="politica-privacidade"
+                >Política de Privacidade</a
+              ></label
+            >
+          </div>
+
+          <button
+            type="button"
+            class="botao-cadastrar"
+            aria-label="Cadastrar newsletter"
+          >
+            Cadastrar
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="bg">
+        <div class="final">
+          <div class="sociais" aria-label="Redes sociais">
+            <img
+              src="./public/logo-avanti.svg"
+              alt="Logotipo Avanti"
+              class="icone-sociais"
+            />
+            <div class="sociais2" role="group" aria-label="Links redes sociais">
+              <a href="#" aria-label="Instagram"
+                ><img
+                  src="./public/instagram.svg"
+                  alt="Instagram"
+                  class="rdsociais"
+              /></a>
+              <a href="#" aria-label="Facebook"
+                ><img
+                  src="./public/facebook.svg"
+                  alt="Facebook"
+                  class="rdsociais"
+              /></a>
+              <a href="#" aria-label="YouTube"
+                ><img
+                  src="./public/youtube.svg"
+                  alt="YouTube"
+                  class="rdsociais"
+              /></a>
+              <a href="#" aria-label="TikTok"
+                ><img src="./public/tiktok.svg" alt="TikTok" class="rdsociais"
+              /></a>
+            </div>
+          </div>
+
+          <div class="accordion-list" aria-label="Links úteis">
+            <div class="institucional accordion">
+              <div
+                class="inst accordion-header"
+                role="button"
+                aria-expanded="false"
+                tabindex="0"
+              >
+                <h4>Institucional</h4>
+              </div>
+              <div class="sec accordion-content">
+                <h5 class="sec">Nossas Lojas</h5>
+                <h5 class="sec">Privacidade e Segurança</h5>
+                <h5 class="sec">Termos e Condições</h5>
+              </div>
+            </div>
+
+            <div class="central accordion">
+              <div
+                class="central-titulo accordion-header"
+                role="button"
+                aria-expanded="false"
+                tabindex="0"
+              >
+                <h4>Central de ajuda</h4>
+              </div>
+              <div class="accordion-content">
+                <h5 class="sec">Fale Conosco</h5>
+                <h5 class="sec">Frete e Entrega</h5>
+                <h5 class="sec">Trocas e Devoluções</h5>
+                <h5 class="sec">Formas de Pagamento</h5>
+              </div>
+            </div>
+
+            <div class="atendimento accordion">
+              <div
+                class="ated accordion-header"
+                role="button"
+                aria-expanded="false"
+                tabindex="0"
+              >
+                <h4>Atendimento</h4>
+              </div>
+              <div class="accordion-content">
+                <div class="cont">
+                  <h5>Telefone:</h5>
+                  <p class="sec">(00) 1234-5678</p>
+                </div>
+                <div class="email">
+                  <h5>E-mail:</h5>
+                  <p class="sec">exemplo@exemplo.com.br</p>
+                </div>
+                <div class="hor-atend">
+                  <h5>Horário de atendimento</h5>
+                  <p class="sec-dias">Segunda a Sábado: 07h00 às 23h00</p>
+                  <p class="sec-dias">Domingos e Feriados: 07h00 às 21h00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="meioPagamentos" aria-label="Formas de pagamento">
+          <div class="ajuste">
+            <div class="col-um">
+              <img
+                src="./public/amex.svg"
+                alt="American Express"
+                class="meio-pag"
+              />
+              <img
+                src="./public/master-card.svg"
+                alt="Mastercard"
+                class="meio-pag"
+              />
+              <img src="./public/visa.svg" alt="Visa" class="meio-pag" />
+              <img
+                src="./public/hipercard.svg"
+                alt="Hipercard"
+                class="meio-pag"
+              />
+              <img src="./public/elo.svg" alt="Elo" class="meio-pag" />
+            </div>
+            <div class="col-dois">
+              <img src="./public/diners.svg" alt="Diners" class="meio-pag" />
+              <img src="./public/paypal.svg" alt="PayPal" class="meio-pag" />
+              <img src="./public/pix.svg" alt="Pix" class="meio-pag" />
+              <img src="./public/boleto.svg" alt="Boleto" class="meio-pag" />
+            </div>
+          </div>
+        </div>
+
+        <div id="frase-final" role="region" aria-label="Sobre a empresa">
+          <p class="frase-final">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+            consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
+            velit esse molestie consequat, vel illum dolore eu feugiat nulla
+            facilisis at vero eros et accumsan et iusto odio dignissim qui
+            blandit praesent luptatum zzril delenit augue duis dolore te feugait
+            nulla facilisi.
+          </p>
+        </div>
+
+        <div class="parceiros" aria-label="Parceiros">
+          <img src="./public/let-s.svg" alt="Let-s" class="parceiro" />
+          <img
+            src="./public/vtex-pci-200.svg"
+            alt="VTEX PCI"
+            class="parceiro"
+          />
+          <img src="./public/logo-avanti.svg" alt="Avanti" class="parceiro" />
+          <img src="./public/vtex-vermelho.svg" alt="VTEX" class="parceiro" />
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
